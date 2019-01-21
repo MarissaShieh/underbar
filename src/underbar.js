@@ -85,10 +85,10 @@
   // Return all elements of an array that pass a truth test.
   _.filter = function(collection, test) {
 
-    var resultsArr = []
+    var resultsArr = [];
     _.each(collection, function (item)) {
-      if ( test(item) ==== true){
-        resultsArr.push(collection[]);        
+      if ( test(item) ){
+        resultsArr.push(item);        
       }
     }
 
