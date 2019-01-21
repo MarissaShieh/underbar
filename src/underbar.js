@@ -32,11 +32,13 @@
   // return just the first element.
   _.first = function(array, n) {
     return n === undefined ? array[0] : array.slice(0, n);
+    //if n === do array[0]...else do first n
   };
 
   // Like first, but for the last elements. If n is undefined, return just the
   // last element.
   _.last = function(array, n) {
+    return n === undefined ? array[-1] : array.slice(-n);
   };
 
   // Call iterator(value, key, collection) for each element of collection.
