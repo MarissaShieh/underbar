@@ -110,20 +110,20 @@
   // Produce a duplicate-free version of the array.
   _.uniq = function(array, isSorted, iterator) {
 
-    // var results = [];
+    var results = [];
 
-    // if (isSorted){
-    //   _.each(array, function(item){
-    //     if (results[results.length-1] != iterator(item)){
-    //       results.push(iterator(item));
-    //     }
-    //   });
+    if (isSorted){
+      _.each(array, function(item, index){
+        if (iterator(array[index]) != iterator(array[index-1])){
+          results.push(item);
+        }
+      });
     // } else {
 
     // }
 
 
-    // return results;
+    return results;
   };
 
 
