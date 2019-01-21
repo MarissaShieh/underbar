@@ -101,7 +101,15 @@
     // TIP: see if you can re-use _.filter() here, without simply
     // copying code in and modifying it
 
-    return collection.filter(function(){test===false});
+     var resultsArr = [];
+    
+     _.each( collection, function(item) {
+      if ( !test(item) ){
+         resultsArr.push(item);        
+      }
+     });
+
+     return resultsArr;
 
   };
 
