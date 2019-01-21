@@ -55,7 +55,7 @@
   // iterator function over each item in the input collection.
   _.each = function(collection, iterator) {
     for (let i = 0; i < collection.length; i++){
-      [iterator(collection.i]), i, collection];
+      [iterator(collection[i]), i, collection];
     }
   };
 
