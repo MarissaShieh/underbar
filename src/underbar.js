@@ -118,9 +118,21 @@
           results.push(item);
         }
       });
-     } //else {
+     } 
 
-    // }
+     else {
+      var obj = {};
+
+      _.each(collection, function(item){
+        obj[item] = 1;
+
+      });
+
+
+      for (var k in obj){
+        results.push(k);
+      }
+     }
 
 
     return results;
