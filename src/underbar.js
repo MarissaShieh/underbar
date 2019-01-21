@@ -114,9 +114,9 @@
 
     if (isSorted){
       _.each(array, function(item, index){
-        if (iterator(array[index]) != iterator(array[index-1])){
+        //if (iterator(array[index]) != iterator(array[index-1])){
           results.push(item);
-        }
+        //}
       });
     // } else {
 
