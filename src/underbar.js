@@ -60,7 +60,7 @@
       }
     } else {
       for (var k in collection){
-        (iterator(collection[k], k, collection);
+        iterator(collection[k], k, collection);
       }
     }
   };
