@@ -101,8 +101,8 @@
     // TIP: see if you can re-use _.filter() here, without simply
     // copying code in and modifying it
 
-    return _.filter(collection, function(value){
-      return !test(value);
+    return _.filter(collection, function(item){
+      return !test(item);
     });
 
   };
@@ -114,11 +114,11 @@
 
     if (isSorted){
       _.each(array, function(item, index){
-        //if (iterator(array[index]) != iterator(array[index-1])){
+        if (iterator(array[index]) != iterator(array[index-1])){
           results.push(item);
-        //}
+        }
       });
-    // } else {
+     } //else {
 
     // }
 
