@@ -101,35 +101,29 @@
     // TIP: see if you can re-use _.filter() here, without simply
     // copying code in and modifying it
 
-     var resultsArr = [];
-    
-     _.each( collection, function(item) {
-      if ( !test(item) ){
-         resultsArr.push(item);        
-      }
-     });
-
-     return resultsArr;
+    return _.filter(collection, function(){
+      return (test != value;
+    });
 
   };
 
   // Produce a duplicate-free version of the array.
   _.uniq = function(array, isSorted, iterator) {
 
-    var results = [];
+    // var results = [];
 
-    if (isSorted){
-      _.each(array, function(item){
-        if (results[results.length-1] != iterator(item)){
-          results.push(iterator(item));
-        }
-      });
-    } else {
+    // if (isSorted){
+    //   _.each(array, function(item){
+    //     if (results[results.length-1] != iterator(item)){
+    //       results.push(iterator(item));
+    //     }
+    //   });
+    // } else {
 
-    }
+    // }
 
 
-    return results;
+    // return results;
   };
 
 
@@ -180,6 +174,12 @@
   //          No accumulator is given so the first element is used.
   _.reduce = function(collection, iterator, accumulator) {
   };
+
+
+
+
+
+
 
   // Determine if the array or object contains a given value (using `===`).
   _.contains = function(collection, target) {
