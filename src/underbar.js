@@ -123,14 +123,14 @@
      else {
       var obj = {};
 
-      _.each(collection, function(item){
-        obj[item] = 1;
+      _.each(array, function(item, index){
+        obj[iterator(array[index])] = item;
 
       });
 
 
       for (var k in obj){
-        results.push(k);
+        results.push(obj[k]);
       }
      }
 
