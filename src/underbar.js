@@ -87,11 +87,11 @@
 
      var resultsArr = [];
     
-    //  _.each( collection, function(item) ) {
-    // //   if ( test(item) ){
-    // //      resultsArr.push(item);        
-    // //   }
-    //  }
+     _.each( collection, function(item) {
+      if ( test(item) ){
+         resultsArr.push(item);        
+      }
+     });
 
      return resultsArr;
   };
