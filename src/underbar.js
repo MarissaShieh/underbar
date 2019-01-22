@@ -192,15 +192,15 @@
 
     _.each(collection, function(item){
       if (accumulator === undefined){
-        accumulator = item
-      } if (iterator === undefined){
-        accumulator = item
+        accumulator = item;
+      } else if (iterator === undefined){
+        accumulator = item;
       }
 
       else {
         accumulator = iterator(accumulator, item);
       }
-      });
+    });
 
     return accumulator;
 
