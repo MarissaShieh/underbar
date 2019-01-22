@@ -191,16 +191,18 @@
   _.reduce = function(collection, iterator, accumulator) {
 
     if (accumulator === undefined){
-       _.each(collection.slice(1), function(item){
-        return iterator(undefined, item);
+      _.each(collection, function(item){
+          accumulator = item;
       });
     } 
 
-    else {
+     else {
        _.each(collection, function(item){
-        return iterator(accumulator, item);
+         iterator(accumulator, item);
       });
-    }
+     }
+
+    return accumulator;
 
   };
 
