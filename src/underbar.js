@@ -197,7 +197,7 @@
     } 
 
      else {
-       _.each(collection, function(item){
+       _.each(collection.slice(1), function(item){
          iterator(accumulator, item);
       });
      }
