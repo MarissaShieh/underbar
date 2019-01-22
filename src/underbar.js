@@ -190,10 +190,18 @@
   //          No accumulator is given so the first element is used.
   _.reduce = function(collection, iterator, accumulator) {
 
-    return _.each(collection, function(item){
-      return iterator(accumulator, item);
+    if (accumulator === undefined){
+      return _.each(collection.slice(1), function(item, index){
+        return iterator(undefined, item);
       });
- 
+    }
+
+    else {
+      return _.each(collection, function(item, index){
+        return iterator(accumulator, item);
+      });
+    }
+
   };
 
 
