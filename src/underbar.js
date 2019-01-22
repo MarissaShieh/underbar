@@ -198,6 +198,8 @@
       }
       });
 
+    return accumulator;
+
   };
 
 
