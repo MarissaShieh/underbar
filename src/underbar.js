@@ -189,10 +189,12 @@
   //   }); // should be 5, regardless of the iterator function passed in
   //          No accumulator is given so the first element is used.
   _.reduce = function(collection, iterator, accumulator) {
+    var firstStep = (arguments.length === 2);
 
     _.each(collection, function(item){
-      if (arguments.length === 2){
+      if (firstStep){
         accumulator = item;
+        firstStep = false;
       }
 
       else {
