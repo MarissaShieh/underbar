@@ -191,7 +191,7 @@
   _.reduce = function(collection, iterator, accumulator) {
 
     return _.each(collection, function(item){
-      return iterator(item + accumulator);
+      return iterator(item) + accumulator;
       });
  
   };
