@@ -185,19 +185,19 @@
   //   }, 0); // should be 6
   //  
   //   var identity = _.reduce([5], function(total, number){
-  //     return total + number * number;
+  //    return total + number * number;
   //   }); // should be 5, regardless of the iterator function passed in
   //          No accumulator is given so the first element is used.
   _.reduce = function(collection, iterator, accumulator) {
 
     if (accumulator === undefined){
-      return _.each(collection.slice(1), function(item, index){
+       _.each(collection.slice(1), function(item){
         return iterator(undefined, item);
       });
-    }
+    } 
 
     else {
-      return _.each(collection, function(item, index){
+       _.each(collection, function(item){
         return iterator(accumulator, item);
       });
     }
