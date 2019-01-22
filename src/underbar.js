@@ -191,9 +191,7 @@
   _.reduce = function(collection, iterator, accumulator) {
 
     _.each(collection, function(item){
-      if (accumulator === undefined){
-        accumulator = item;
-      } else if (iterator === undefined){
+      if (arguments.length === 2){
         accumulator = item;
       }
 
