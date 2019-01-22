@@ -124,7 +124,8 @@
       var obj = {};
 
       _.each(array, function(item, index){
-        obj[iterator(array[index])] = item;
+        obj[item] = item;
+        //obj[iterator(array[index])] = item;
 
       });
 
@@ -186,6 +187,11 @@
   //          No accumulator is given so the first element is used.
   _.reduce = function(collection, iterator, accumulator) {
   };
+
+
+
+
+
 
 
 
