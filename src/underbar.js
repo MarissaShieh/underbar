@@ -255,13 +255,8 @@
         obj[key] = item;
       });
     });
-
     return obj;
-
-    //iterate through each twice. Once with all the ele of argumentsList and once with each obj inside
-
   };
-  //{a:b}
 
   // Like extend, but doesn't ever overwrite a key that already
   // exists in obj
