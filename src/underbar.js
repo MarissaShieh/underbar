@@ -211,7 +211,7 @@
       if (iterator === undefined){
         return Boolean(item);
       }
-      if (collectiveResult === false){ //Short-circuits and stops if "false" found. 
+      if (collectiveResult === false){  
         return false;
       }
      return Boolean(iterator(item));
@@ -222,7 +222,22 @@
   // provided, provide a default one
   _.some = function(collection, iterator) {
     // TIP: There's a very clever way to re-use every() here.
+
+    if (iterator === undefined){
+      iterator = _.identity;
+    }
+
+    return !_.every(collection, function(item){
+      return !iterator(item);
+    });
   };
+
+  /*
+  if every one true = true
+  if mixed true = true
+  if false = false
+  */
+
 
 
   /**
