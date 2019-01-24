@@ -72,46 +72,35 @@
     // implemented for you. Instead of using a standard `for` loop, though,
     // it uses the iteration helper `each`, which you will need to write.
     var result = -1;
-
     _.each(array, function(item, index) {
       if (item === target && result === -1) {
         result = index;
       }
     });
-
     return result;
   };
 
   // Return all elements of an array that pass a truth test.
   _.filter = function(collection, test) {
-
      var resultsArr = [];
-    
      _.each( collection, function(item) {
       if ( test(item) ){
          resultsArr.push(item);        
       }
      });
-
      return resultsArr;
   };
 
   // Return all elements of an array that don't pass a truth test.
   _.reject = function(collection, test) {
-    // TIP: see if you can re-use _.filter() here, without simply
-    // copying code in and modifying it
-
      return _.filter(collection, function(item){
       return !test(item);
     });
-
   };
 
   // Produce a duplicate-free version of the array.
   _.uniq = function(array, isSorted, iterator) {
-
     var results = [];
-
     if (isSorted){
       _.each(array, function(item, index){
         if (iterator(array[index]) != iterator(array[index-1])){
@@ -119,23 +108,15 @@
         }
       });
      } 
-
      else {
       var obj = {};
-
       _.each(array, function(item, index){
         obj[item] = item;
-        //obj[iterator(array[index])] = item;
-
       });
-
-
       for (var k in obj){
         results.push(obj[k]);
       }
      }
-
-
     return results;
   };
 
@@ -145,13 +126,10 @@
     // map() is a useful primitive iteration function that works a lot
     // like each(), but in addition to running the operation on all
     // the members, it also maintains an array of results.
-
     var results = [];
-
     _.each( collection, function (item){
       results.push(iterator(item));
     });
-
     return results;
   };
 
@@ -190,20 +168,16 @@
   //          No accumulator is given so the first element is used.
   _.reduce = function(collection, iterator, accumulator) {
     var firstStep = (arguments.length === 2);
-
     _.each(collection, function(item){
       if (firstStep){
         accumulator = item;
         firstStep = false;
       }
-
       else {
         accumulator = iterator(accumulator, item);
       }
     });
-
     return accumulator;
-
   };
 
 
