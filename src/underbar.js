@@ -250,7 +250,18 @@
   //     bla: "even more stuff"
   //   }); // obj1 now contains key1, key2, key3 and bla
   _.extend = function(obj) {
+    _.each(arguments, function(eachObj){
+      _.each(eachObj, function(item, key){
+        obj[key] = item;
+      });
+    });
+
+    return obj;
+
+    //iterate through each twice. Once with all the ele of argumentsList and once with each obj inside
+
   };
+  //{a:b}
 
   // Like extend, but doesn't ever overwrite a key that already
   // exists in obj
