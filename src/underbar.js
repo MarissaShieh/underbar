@@ -304,7 +304,7 @@
   };
 
   // Memorize an expensive function's results by storing them. You may assume
-  // that the function only takes primitives as arguments.
+  // that the function only takes primitives (undefined, null, boolean, string and number) as arguments.
   // memoize could be renamed to oncePerUniqueArgumentList; memoize does the
   // same thing as once, but based on many sets of unique arguments.
   //
@@ -312,6 +312,24 @@
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+    // var previousArguments = [];
+    // //var previousArguments = {};
+    // var result;
+    // return function() {
+    //   if (!_.contains(previousArguments, arguments)){
+    //     result = func.apply(this, arguments);
+    //     previousArguments.push(arguments);
+    //     console.log("JSON.stringify(argument): " + JSON.stringify(arguments));
+    //     //console.log("JSON.stringify(argument[1]): " + JSON.stringify.arguments[1]);
+    //     console.log("JSON.stringify(previousArguments): " + JSON.stringify(previousArguments));
+    //   }
+    //   // if (previousArguments.arguments === undefined){
+    //   //   result = func.apply(this, arguments);
+    //   //   previousArguments.arguments = result;
+    //   // }
+    // };
+    // return result;
+    //return previousArguments.arguments;
   };
 
   // Delays a function for the given number of milliseconds, and then calls
@@ -321,6 +339,10 @@
   // parameter. For example _.delay(someFunction, 500, 'a', 'b') will
   // call someFunction('a', 'b') after 500ms
   _.delay = function(func, wait) {
+    var params = Array.prototype.slice.call(arguments, 2);
+    setTimeout(function(){
+      return func.apply(this, params);
+    }, wait);
   };
 
 
@@ -336,6 +358,13 @@
   // http://mdn.io/Array.prototype.slice
   _.shuffle = function(array) {
   };
+
+
+
+
+
+
+
 
 
   /**
