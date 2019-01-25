@@ -312,25 +312,24 @@
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
-    // var previousArguments = [];
-    // //var previousArguments = {};
-    // var result;
-    // return function() {
-    //   if (!_.contains(previousArguments, arguments)){
-    //     result = func.apply(this, arguments);
-    //     previousArguments.push(arguments);
-    //     console.log("JSON.stringify(argument): " + JSON.stringify(arguments));
-    //     //console.log("JSON.stringify(argument[1]): " + JSON.stringify.arguments[1]);
-    //     console.log("JSON.stringify(previousArguments): " + JSON.stringify(previousArguments));
-    //   }
-    //   // if (previousArguments.arguments === undefined){
-    //   //   result = func.apply(this, arguments);
-    //   //   previousArguments.arguments = result;
-    //   // }
-    // };
-    // return result;
-    //return previousArguments.arguments;
+    var previousArguments = {};
+    var result;
+    return function() {
+      if (previousArguments[JSON.stringify(arguments)] === undefined){
+        result = func.apply(this, arguments);
+        previousArguments[JSON.stringify(arguments)] = result;
+      }
+      return result;
+      }
   };
+
+       // if (!_.contains(previousArguments, arguments)){
+      //   result = func.apply(this, arguments);
+      //   previousArguments.push(arguments);
+      //   console.log("JSON.stringify(argument): " + JSON.stringify(arguments));
+      //   console.log("JSON.stringify(argument[1]): " + JSON.stringify.arguments[1]);
+      //  console.log("JSON.stringify(previousArguments): " + JSON.stringify(previousArguments));
+      //  }
 
   // Delays a function for the given number of milliseconds, and then calls
   // it with the arguments supplied.
@@ -357,6 +356,15 @@
   // input array. For a tip on how to make a copy of an array, see:
   // http://mdn.io/Array.prototype.slice
   _.shuffle = function(array) {
+    // var result = [];
+    // var usedSpots = [];
+    // _.each(array, function(){
+
+    //   var newSpot = Math.random()*array.length;
+    //   if
+    // });
+
+    // return result;
   };
 
 
